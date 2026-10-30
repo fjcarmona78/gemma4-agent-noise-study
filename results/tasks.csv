@@ -1,0 +1,217 @@
+instance_id,repo,created_at,sets,source,license
+BQSKit__bqskit-267,BQSKit/bqskit,2024-08-05 16:36:13,rebench-dev,SWE-rebench V1,
+Benardi__touvlo-34,Benardi/touvlo,2019-10-13 17:08:20,rebench-dev,SWE-rebench V1,
+Blaizzy__mlx-vlm-179,Blaizzy/mlx-vlm,2025-01-11 21:48:06,rebench-dev,SWE-rebench V1,
+DataDog__datadogpy-555,DataDog/datadogpy,2020-04-06 19:05:50,rebench-dev,SWE-rebench V1,
+DavidVujic__python-polylith-238,DavidVujic/python-polylith,2024-08-02 05:41:25,rebench-dev,SWE-rebench V1,
+Kinto__kinto-http.py-384,Kinto/kinto-http.py,2025-02-15 11:04:29,fresh-15,SWE-rebench V2 (2025),
+MaxGhenis__microdf-80,MaxGhenis/microdf,2020-04-12 06:03:35,rebench-dev,SWE-rebench V1,
+Nike-Inc__gimme-aws-creds-464,Nike-Inc/gimme-aws-creds,2024-05-08 20:03:23,rebench-dev,SWE-rebench V1,
+PennyLaneAI__pennylane-5582,PennyLaneAI/pennylane,2024-04-26 16:22:36,rebench-dev,SWE-rebench V1,
+PyCQA__pyflakes-508,PyCQA/pyflakes,2020-01-17 18:59:12,rebench-dev,SWE-rebench V1,
+ResearchObject__ro-crate-py-163,ResearchObject/ro-crate-py,2023-09-22 12:33:15,rebench-dev,SWE-rebench V1,
+XKNX__xknx-1502,XKNX/xknx,2024-06-29 15:26:18,rebench-dev,SWE-rebench V1,
+aeon-toolkit__aeon-1767,aeon-toolkit/aeon,2024-07-05 15:50:50,V2-74,SWE-rebench V2,
+aeye-lab__pymovements-486,aeye-lab/pymovements,2023-09-01 09:43:18,V2-74,SWE-rebench V2,
+agnostiqhq__covalent-1287,AgnostiqHQ/covalent,2022-09-27 20:09:48,V2-74,SWE-rebench V2,
+aio-libs__aiosmtpd-106,aio-libs/aiosmtpd,2017-06-02 08:59:24,rebench-dev,SWE-rebench V1,
+aio-libs__multidict-628,aio-libs/multidict,2021-09-30 11:45:10,rebench-dev,SWE-rebench V1,
+aiogram__aiogram-1665,aiogram/aiogram,2025-04-03 10:56:10,recent-33,SWE-rebench V2 (2025),
+alteryx__featuretools-2627,alteryx/featuretools,2023-10-25 15:24:08,V2-74,SWE-rebench V2,
+amaranth-lang__amaranth-804,amaranth-lang/amaranth,2023-06-07 09:48:55,V2-74,SWE-rebench V2,
+apiflask__apiflask-550,apiflask/apiflask,2024-03-03 17:19:33,V2-74,SWE-rebench V2,
+apprise_1747,caronc/apprise,2026-09-26T18:17:27Z,OOD-45,OOD-45,BSD-2-Clause
+aristanetworks__anta-1176,aristanetworks/anta,2025-04-21 14:21:48,fresh-15,SWE-rebench V2 (2025),
+aristanetworks__anta-969,aristanetworks/anta,2024-12-17 04:26:01,V2-74,SWE-rebench V2,
+astanin__python-tabulate-362,astanin/python-tabulate,2025-03-17 20:52:59,recent-33,SWE-rebench V2 (2025),
+astropenguin__xarray-dataclasses-2,astropenguin/xarray-dataclasses,2020-09-24 12:18:25,V2-74,SWE-rebench V2,
+astropy__photutils-1956,astropy/photutils,2024-11-20 18:24:51,rebench-dev,SWE-rebench V1,
+aws-cloudformation__cfn-lint-3712,aws-cloudformation/cfn-lint,2024-09-24 03:05:50,V2-74,SWE-rebench V2,
+aws-cloudformation__cfn-python-lint-1900,aws-cloudformation/cfn-python-lint,2021-02-12 20:58:21,V2-74,SWE-rebench V2,
+beetbox__beets-3702,beetbox/beets,2020-07-30 20:48:38,rebench-dev,SWE-rebench V1,
+burnash__gspread-968,burnash/gspread,2021-12-12 12:02:59,rebench-dev,SWE-rebench V1,
+cachetools_424,tkem/cachetools,2026-09-27T20:10:40Z,OOD-45,OOD-45,MIT
+capitalone__datacompy-404,capitalone/datacompy,2025-04-17 23:56:12,V2-74|fresh-15,SWE-rebench V2,
+cloudtools__troposphere-2225,cloudtools/troposphere,2024-02-13 19:48:39,V2-74,SWE-rebench V2,
+cneud__alto-tools-29,cneud/alto-tools,2025-02-10 17:01:36,fresh-15,SWE-rebench V2 (2025),
+cogent3__cogent3-1514,cogent3/cogent3,2023-07-07 00:47:47,V2-74,SWE-rebench V2,
+conan-io__conan-13284,conan-io/conan,2023-03-01 11:36:57,rebench-dev,SWE-rebench V1,
+copier-org__copier-1998,copier-org/copier,2025-03-02 05:26:29,recent-33,SWE-rebench V2 (2025),
+crewaiinc__crewai-2570,crewAIInc/crewAI,2025-04-10 14:59:01,recent-33,SWE-rebench V2 (2025),
+cs-si__eodag-1536,CS-SI/eodag,2025-02-21 10:04:30,recent-33,SWE-rebench V2 (2025),
+cta-observatory__ctapipe-2732,cta-observatory/ctapipe,2025-04-02 17:48:48,recent-33,SWE-rebench V2 (2025),
+ctfd__ctfd-2767,CTFd/CTFd,2025-06-28 22:07:47,recent-33,SWE-rebench V2 (2025),
+cuthbertlab__music21-1475,cuthbertLab/music21,2022-10-28 12:22:08,V2-74,SWE-rebench V2,
+dalito__ucumvert-25,dalito/ucumvert,2024-09-10 22:07:37,rebench-dev,SWE-rebench V1,
+dask__dask-11723,dask/dask,2025-02-06 18:45:08,fresh-15,SWE-rebench V2 (2025),
+databricks__dbt-databricks-861,databricks/dbt-databricks,2024-12-02 22:53:47,V2-74,SWE-rebench V2,
+daviddrysdale__python-phonenumbers-182,daviddrysdale/python-phonenumbers,2020-12-15 19:03:52,rebench-dev,SWE-rebench V1,
+delgan__loguru-1303,Delgan/loguru,2025-02-18 11:46:51,V2-74,SWE-rebench V2,
+deppen8__pandas-vet-42,deppen8/pandas-vet,2019-03-03 00:22:37,rebench-dev,SWE-rebench V1,
+diaoul__subliminal-1218,Diaoul/subliminal,2025-03-03 21:56:59,recent-33,SWE-rebench V2 (2025),
+dpkp__kafka-python-2544,dpkp/kafka-python,2025-03-15 01:58:48,recent-33,SWE-rebench V2 (2025),
+dr-prodigy__python-holidays-1325,dr-prodigy/python-holidays,2023-06-21 15:53:34,rebench-dev,SWE-rebench V1,
+dwavesystems__dimod-1409,dwavesystems/dimod,2025-06-23 22:45:48,recent-33,SWE-rebench V2 (2025),
+dynaconf__dynaconf-1293,dynaconf/dynaconf,2025-05-06 11:32:03,recent-33,SWE-rebench V2 (2025),
+ecmwf__earthkit-data-251,ecmwf/earthkit-data,2023-11-01 16:41:01,V2-74,SWE-rebench V2,
+ericmjl__pyjanitor-762,ericmjl/pyjanitor,2020-10-05 05:06:12,V2-74,SWE-rebench V2,
+feast_6859,feast-dev/feast,2026-09-26T16:51:50Z,OOD-45,OOD-45,Apache-2.0
+feast_6860,feast-dev/feast,2026-09-26T13:23:23Z,OOD-45,OOD-45,Apache-2.0
+feast_6874,feast-dev/feast,2026-09-29T04:54:38Z,OOD-45,OOD-45,Apache-2.0
+filesystem_spec_2169,fsspec/filesystem_spec,2026-09-21T19:45:14Z,OOD-45,OOD-45,BSD-3-Clause
+filesystem_spec_2170,fsspec/filesystem_spec,2026-09-21T19:44:53Z,OOD-45,OOD-45,BSD-3-Clause
+filesystem_spec_2182,fsspec/filesystem_spec,2026-09-24T18:51:20Z,OOD-45,OOD-45,BSD-3-Clause
+filesystem_spec_2183,fsspec/filesystem_spec,2026-09-25T20:39:50Z,OOD-45,OOD-45,BSD-3-Clause
+filesystem_spec_2191,fsspec/filesystem_spec,2026-09-28T14:05:09Z,OOD-45,OOD-45,BSD-3-Clause
+filesystem_spec_2216,fsspec/filesystem_spec,2026-10-01T16:09:41Z,OOD-45,OOD-45,BSD-3-Clause
+filesystem_spec_2218,fsspec/filesystem_spec,2026-10-02T13:28:24Z,OOD-45,OOD-45,BSD-3-Clause
+fjosw__pyerrors-45,fjosw/pyerrors,2022-01-27 17:10:36,rebench-dev,SWE-rebench V1,
+getmoto__moto-7119,getmoto/moto,2023-12-11 23:45:48,V2-74,SWE-rebench V2,
+googleapis__python-api-core-546,googleapis/python-api-core,2023-11-06 19:13:45,rebench-dev,SWE-rebench V1,
+googleapis__python-bigquery-2218,googleapis/python-bigquery,2025-06-18 08:13:48,V2-74,SWE-rebench V2,
+googleapis__python-datastore-115,googleapis/python-datastore,2020-11-09 10:39:31,rebench-dev,SWE-rebench V1,
+googlecloudplatform__cloud-sql-python-connector-983,GoogleCloudPlatform/cloud-sql-python-connector,2024-01-25 22:31:20,V2-74,SWE-rebench V2,
+great_tables_865,posit-dev/great-tables,2026-09-21T03:38:02Z,OOD-45,OOD-45,MIT
+great_tables_867,posit-dev/great-tables,2026-09-20T03:51:52Z,OOD-45,OOD-45,MIT
+great_tables_869,posit-dev/great-tables,2026-09-19T10:14:37Z,OOD-45,OOD-45,MIT
+great_tables_872,posit-dev/great-tables,2026-09-20T03:59:36Z,OOD-45,OOD-45,MIT
+great_tables_873,posit-dev/great-tables,2026-09-20T04:07:06Z,OOD-45,OOD-45,MIT
+great_tables_874,posit-dev/great-tables,2026-09-20T04:01:55Z,OOD-45,OOD-45,MIT
+great_tables_876,posit-dev/great-tables,2026-09-21T14:33:55Z,OOD-45,OOD-45,MIT
+great_tables_879,posit-dev/great-tables,2026-09-21T17:29:14Z,OOD-45,OOD-45,MIT
+great_tables_880,posit-dev/great-tables,2026-09-21T17:36:31Z,OOD-45,OOD-45,MIT
+great_tables_889,posit-dev/great-tables,2026-09-25T14:34:29Z,OOD-45,OOD-45,MIT
+great_tables_893,posit-dev/great-tables,2026-10-02T14:00:22Z,OOD-45,OOD-45,MIT
+great_tables_895,posit-dev/great-tables,2026-10-02T13:33:25Z,OOD-45,OOD-45,MIT
+greyli__apiflask-178,greyli/apiflask,2021-11-27 05:20:56,V2-74,SWE-rebench V2,
+gridtools__gt4py-1449,GridTools/gt4py,2024-02-08 14:13:58,V2-74,SWE-rebench V2,
+gtalarico__pyairtable-422,gtalarico/pyairtable,2025-02-20 08:38:07,recent-33,SWE-rebench V2 (2025),
+hgrecco__pint-1176,hgrecco/pint,2020-09-22 02:35:35,rebench-dev,SWE-rebench V1,
+ibis-project__ibis-4772,ibis-project/ibis,2022-11-04 21:53:10,rebench-dev,SWE-rebench V1,
+iceberg_python_3995,apache/iceberg-python,2026-09-18T20:21:17Z,OOD-45,OOD-45,Apache-2.0
+iceberg_python_4005,apache/iceberg-python,2026-09-24T20:19:36Z,OOD-45,OOD-45,Apache-2.0
+ipython__ipython-11398,ipython/ipython,2018-10-15 01:28:16,rebench-dev,SWE-rebench V1,
+ishepard__pydriller-119,ishepard/pydriller,2020-05-05 11:49:26,V2-74,SWE-rebench V2,
+janehmueller__python-json-config-14,janehmueller/python-json-config,2018-12-05 16:48:00,rebench-dev,SWE-rebench V1,
+jazzband__django-axes-865,jazzband/django-axes,2022-03-22 15:23:56,V2-74,SWE-rebench V2,
+jazzband__tablib-613,jazzband/tablib,2025-02-19 15:42:40,recent-33,SWE-rebench V2 (2025),
+joke2k__faker-2007,joke2k/faker,2024-03-14 22:24:04,rebench-dev,SWE-rebench V1,
+joshuadavidthomas__django-bird-219,joshuadavidthomas/django-bird,2025-03-06 20:48:48,recent-33,SWE-rebench V2 (2025),
+jsonpickle__jsonpickle-565,jsonpickle/jsonpickle,2025-06-08 19:40:12,recent-33,SWE-rebench V2 (2025),
+juaAI__stationbench-41,juaAI/stationbench,2025-02-26 11:07:49,fresh-15,SWE-rebench V2 (2025),
+kedro_5790,kedro-org/kedro,2026-09-29T14:09:39Z,OOD-45,OOD-45,Apache-2.0
+kedro_5791,kedro-org/kedro,2026-10-02T16:30:18Z,OOD-45,OOD-45,Apache-2.0
+kedro_5792,kedro-org/kedro,2026-09-30T12:41:02Z,OOD-45,OOD-45,Apache-2.0
+kedro_5793,kedro-org/kedro,2026-09-30T12:58:07Z,OOD-45,OOD-45,Apache-2.0
+kedro_viz_2786,kedro-org/kedro-viz,2026-10-02T16:28:12Z,OOD-45,OOD-45,Apache-2.0
+keras-team__keras-20609,keras-team/keras,2024-12-09 02:45:59,V2-74,SWE-rebench V2,
+koaning__scikit-lego-736,koaning/scikit-lego,2025-03-16 21:14:07,recent-33,SWE-rebench V2 (2025),
+kozea__weasyprint-2405,Kozea/WeasyPrint,2025-03-08 00:01:12,V2-74,SWE-rebench V2,
+kozea__weasyprint-2494,Kozea/WeasyPrint,2025-07-06 11:54:40,fresh-15,SWE-rebench V2 (2025),
+lincc-frameworks__nested-pandas-236,lincc-frameworks/nested-pandas,2025-04-08 21:56:28,rebench-dev,SWE-rebench V1,
+marcosschroh__dataclasses-avroschema-835,marcosschroh/dataclasses-avroschema,2025-02-04 12:22:53,rebench-dev,SWE-rebench V1,
+marketsquare__robotframework-robocop-1027,MarketSquare/robotframework-robocop,2023-12-27 16:54:18,V2-74,SWE-rebench V2,
+martinthoma__flake8-simplify-124,MartinThoma/flake8-simplify,2022-03-28 15:02:14,V2-74,SWE-rebench V2,
+matchms__matchms-686,matchms/matchms,2024-06-25 15:09:31,V2-74,SWE-rebench V2,
+matthewwithanm__python-markdownify-214,matthewwithanm/python-markdownify,2025-04-20 16:24:02,recent-33,SWE-rebench V2 (2025),
+melexis__warnings-plugin-28,melexis/warnings-plugin,2017-06-30 08:18:03,rebench-dev,SWE-rebench V1,
+mesonbuild__meson-12210,mesonbuild/meson,2023-09-04 04:14:50,rebench-dev,SWE-rebench V1,
+microsoft__azuretre-4352,microsoft/AzureTRE,2025-02-10 22:59:32,V2-74,SWE-rebench V2,
+mikedh__trimesh-2363,mikedh/trimesh,2025-02-26 18:52:18,recent-33,SWE-rebench V2 (2025),
+mlcommons__medperf-553,mlcommons/medperf,2024-02-29 21:51:22,V2-74,SWE-rebench V2,
+model-bakers__model_bakery-486,model-bakers/model_bakery,2024-08-09 14:31:41,rebench-dev,SWE-rebench V1,
+modin-project__modin-7491,modin-project/modin,2025-04-03 07:47:49,V2-74|fresh-15,SWE-rebench V2,
+more-itertools__more-itertools-412,more-itertools/more-itertools,2020-03-29 21:06:55,V2-74,SWE-rebench V2,
+mozman__steputils-3,mozman/steputils,2022-03-28 12:57:06,rebench-dev,SWE-rebench V1,
+mozman__svgwrite-109,mozman/svgwrite,2022-03-22 10:59:46,rebench-dev,SWE-rebench V1,
+mpmath__mpmath-713,mpmath/mpmath,2023-07-25 06:38:12,V2-74,SWE-rebench V2,
+mpmath__mpmath-926,mpmath/mpmath,2025-03-07 23:59:59,fresh-15,SWE-rebench V2 (2025),
+nerdvegas__rez-1252,nerdvegas/rez,2022-03-19 00:36:31,V2-74,SWE-rebench V2,
+niconoe__pyinaturalist-86,niconoe/pyinaturalist,2020-12-04 20:25:29,V2-74,SWE-rebench V2,
+nolar__kopf-1031,nolar/kopf,2023-06-11 16:55:04,V2-74,SWE-rebench V2,
+nox_1188,wntrblm/nox,2026-09-28T20:12:24Z,OOD-45,OOD-45,Apache-2.0
+ntnu-ihb__pythonfmu-158,NTNU-IHB/PythonFMU,2022-09-26 10:08:41,V2-74,SWE-rebench V2,
+oasis-open__cti-python-stix2-483,oasis-open/cti-python-stix2,2021-01-21 02:05:55,V2-74,SWE-rebench V2,
+oemof__tespy-653,oemof/tespy,2025-04-30 20:14:11,fresh-15,SWE-rebench V2 (2025),
+omni-us__jsonargparse-564,omni-us/jsonargparse,2024-08-20 05:39:59,rebench-dev,SWE-rebench V1,
+onnx__sklearn-onnx-1163,onnx/sklearn-onnx,2025-02-03 14:02:27,recent-33,SWE-rebench V2 (2025),
+openlawlibrary__pygls-383,openlawlibrary/pygls,2023-09-29 08:56:57,V2-74,SWE-rebench V2,
+openmdao__dymos-1018,OpenMDAO/dymos,2023-11-15 17:47:13,V2-74,SWE-rebench V2,
+packit__packit-2556,packit/packit,2025-03-16 23:52:42,V2-74,SWE-rebench V2,
+pallets__jinja-1762,pallets/jinja,2022-11-16 20:13:06,V2-74,SWE-rebench V2,
+pallets__werkzeug-2161,pallets/werkzeug,2021-06-11 07:06:50,V2-74,SWE-rebench V2,
+pandas-dev__pandas-59398,pandas-dev/pandas,2024-08-04 03:44:18,V2-74,SWE-rebench V2,
+parquery__icontract-236,Parquery/icontract,2021-11-25 09:38:33,V2-74,SWE-rebench V2,
+pdm-project__pdm-1628,pdm-project/pdm,2023-01-18 03:04:12,V2-74,SWE-rebench V2,
+pdm-project__pdm-3420,pdm-project/pdm,2025-03-11 15:32:58,fresh-15,SWE-rebench V2 (2025),
+pdm_3902,pdm-project/pdm,2026-10-01T11:43:46Z,OOD-45,OOD-45,MIT
+peopledoc__vault-cli-111,peopledoc/vault-cli,2019-09-13 08:51:55,rebench-dev,SWE-rebench V1,
+pint_2434,hgrecco/pint,2026-10-01T09:33:46Z,OOD-45,OOD-45,BSD-3-Clause
+pint_2437,hgrecco/pint,2026-10-01T14:52:14Z,OOD-45,OOD-45,BSD-3-Clause
+plotnine_1129,has2k1/plotnine,2026-09-26T20:36:28Z,OOD-45,OOD-45,MIT
+polars_29401,pola-rs/polars,2026-09-22T14:46:25Z,OOD-45,OOD-45,MIT
+ppizarror__pygame-menu-357,ppizarror/pygame-menu,2021-06-14 21:41:07,rebench-dev,SWE-rebench V1,
+psf__black-4161,psf/black,2024-01-22 06:52:26,rebench-dev,SWE-rebench V1,
+psf__pyperf-199,psf/pyperf,2024-08-09 19:05:45,rebench-dev,SWE-rebench V1,
+py_shiny_2505,posit-dev/py-shiny,2026-09-28T23:10:59Z,OOD-45,OOD-45,MIT
+py_shiny_2510,posit-dev/py-shiny,2026-09-28T16:22:00Z,OOD-45,OOD-45,MIT
+pyccel__pyccel-270,pyccel/pyccel,2020-03-17 15:36:10,V2-74,SWE-rebench V2,
+pydap__pydap-481,pydap/pydap,2025-04-13 03:52:41,recent-33,SWE-rebench V2 (2025),
+pyjanitor-devs__pyjanitor-1446,pyjanitor-devs/pyjanitor,2025-02-21 23:19:20,recent-33,SWE-rebench V2 (2025),
+pyjanitor_1739,pyjanitor-devs/pyjanitor,2026-10-01T10:12:46Z,OOD-45,OOD-45,MIT
+pyjanitor_1741,pyjanitor-devs/pyjanitor,2026-10-02T04:38:33Z,OOD-45,OOD-45,MIT
+pypa__setuptools-4856,pypa/setuptools,2025-02-26 16:50:40,recent-33,SWE-rebench V2 (2025),
+pypa__virtualenv-2907,pypa/virtualenv,2025-07-16 17:58:06,V2-74,SWE-rebench V2,
+pypsa__linopy-438,PyPSA/linopy,2025-04-02 19:43:04,recent-33,SWE-rebench V2 (2025),
+pytest-dev__pluggy-251,pytest-dev/pluggy,2020-01-27 00:30:11,V2-74,SWE-rebench V2,
+pythainlp__pythainlp-1046,PyThaiNLP/pythainlp,2024-12-25 06:25:09,V2-74,SWE-rebench V2,
+python-attrs__attrs-1417,python-attrs/attrs,2025-03-12 16:48:42,fresh-15,SWE-rebench V2 (2025),
+python-attrs__attrs-888,python-attrs/attrs,2021-12-15 08:24:52,V2-74,SWE-rebench V2,
+python-babel__babel-1196,python-babel/babel,2025-03-04 17:35:04,recent-33,SWE-rebench V2 (2025),
+python-control__python-control-1145,python-control/python-control,2025-04-17 03:16:40,recent-33,SWE-rebench V2 (2025),
+python-markdown__markdown-1359,Python-Markdown/markdown,2023-07-19 15:23:39,V2-74,SWE-rebench V2,
+python-semver__python-semver-261,python-semver/python-semver,2020-06-09 03:08:44,V2-74,SWE-rebench V2,
+pyvrp__pyvrp-280,PyVRP/PyVRP,2023-07-16 17:28:35,V2-74,SWE-rebench V2,
+qiskit__qiskit-12621,Qiskit/qiskit,2024-06-20 18:06:51,V2-74,SWE-rebench V2,
+qiskit__qiskit-terra-7970,Qiskit/qiskit-terra,2022-04-20 22:54:28,V2-74,SWE-rebench V2,
+quantecon__quantecon.py-769,QuantEcon/QuantEcon.py,2025-06-22 13:14:57,recent-33,SWE-rebench V2 (2025),
+qutip__qutip-2694,qutip/qutip,2025-05-15 15:48:33,V2-74|fresh-15,SWE-rebench V2,
+reagento__dishka-436,reagento/dishka,2025-04-15 22:52:26,V2-74|fresh-15,SWE-rebench V2,
+reanahub__reana-client-656,reanahub/reana-client,2023-03-17 11:18:00,rebench-dev,SWE-rebench V1,
+reata__sqllineage-582,reata/sqllineage,2024-02-23 15:06:39,V2-74,SWE-rebench V2,
+relekang__python-semantic-release-502,relekang/python-semantic-release,2022-09-24 21:05:31,V2-74,SWE-rebench V2,
+rigetti__pyquil-1564,rigetti/pyquil,2023-04-13 21:12:30,rebench-dev,SWE-rebench V1,
+sanic-org__sanic-ext-161,sanic-org/sanic-ext,2022-12-20 13:25:26,V2-74,SWE-rebench V2,
+scikit-activeml__scikit-activeml-504,scikit-activeml/scikit-activeml,2025-05-14 12:46:53,V2-74,SWE-rebench V2,
+sciunto-org__python-bibtexparser-162,sciunto-org/python-bibtexparser,2017-05-22 14:53:54,rebench-dev,SWE-rebench V1,
+sfdo-tooling__cumulusci-3645,SFDO-Tooling/CumulusCI,2023-09-01 18:09:22,V2-74,SWE-rebench V2,
+silx-kit__silx-4242,silx-kit/silx,2025-03-27 10:14:01,recent-33,SWE-rebench V2 (2025),
+sissbruecker__linkding-984,sissbruecker/linkding,2025-02-08 09:28:44,recent-33,SWE-rebench V2 (2025),
+skrub-data__skrub-1445,skrub-data/skrub,2025-06-17 09:12:48,recent-33,SWE-rebench V2 (2025),
+softlayer__softlayer-python-2214,softlayer/softlayer-python,2025-02-20 19:10:08,recent-33,SWE-rebench V2 (2025),
+spikeinterface__spikeinterface-3829,SpikeInterface/spikeinterface,2025-04-02 09:24:15,recent-33,SWE-rebench V2 (2025),
+statsmodels__statsmodels-9165,statsmodels/statsmodels,2024-02-27 15:13:58,rebench-dev,SWE-rebench V1,
+stellar__django-polaris-654,stellar/django-polaris,2022-08-16 23:00:04,V2-74,SWE-rebench V2,
+stfc__psyclone-2685,stfc/PSyclone,2024-08-07 10:40:01,V2-74,SWE-rebench V2,
+tartiflette__tartiflette-384,tartiflette/tartiflette,2020-04-30 14:05:23,V2-74,SWE-rebench V2,
+tefra__xsdata-787,tefra/xsdata,2023-05-14 15:28:20,rebench-dev,SWE-rebench V1,
+terrapower__armi-2121,terrapower/armi,2025-04-16 15:04:52,recent-33,SWE-rebench V2 (2025),
+textualize__rich-2806,Textualize/rich,2023-02-13 13:51:04,V2-74,SWE-rebench V2,
+theacodes__nox-363,theacodes/nox,2020-11-23 08:48:01,V2-74,SWE-rebench V2,
+theupdateframework__python-tuf-2632,theupdateframework/python-tuf,2024-05-20 17:23:29,V2-74,SWE-rebench V2,
+tobikodata__sqlmesh-2903,TobikoData/sqlmesh,2024-07-15 18:11:44,V2-74,SWE-rebench V2,
+tobymao__sqlglot-4448,tobymao/sqlglot,2024-11-26 14:58:43,rebench-dev,SWE-rebench V1,
+tornadoweb__tornado-3521,tornadoweb/tornado,2025-07-22 19:09:40,recent-33,SWE-rebench V2 (2025),
+tox-dev__tox-2822,tox-dev/tox,2023-01-04 23:20:32,rebench-dev,SWE-rebench V1,
+tox_4094,tox-dev/tox,2026-09-26T01:34:17Z,OOD-45,OOD-45,MIT
+tox_4097,tox-dev/tox,2026-09-27T16:08:01Z,OOD-45,OOD-45,MIT
+tox_4109,tox-dev/tox,2026-10-01T23:11:37Z,OOD-45,OOD-45,MIT
+twisted__twisted-12302,twisted/twisted,2024-08-31 21:25:30,rebench-dev,SWE-rebench V1,
+urllib3_5279,urllib3/urllib3,2026-10-03T20:50:30Z,OOD-45,OOD-45,MIT
+virtuslab__git-machete-179,VirtusLab/git-machete,2021-08-19 13:47:27,V2-74,SWE-rebench V2,
+vyperlang__vyper-3551,vyperlang/vyper,2023-08-05 03:20:38,rebench-dev,SWE-rebench V1,
+websocket-client__websocket-client-929,websocket-client/websocket-client,2023-07-10 09:14:17,rebench-dev,SWE-rebench V1,
+wireservice__csvkit-1281,wireservice/csvkit,2025-02-24 09:11:16,fresh-15,SWE-rebench V2 (2025),
+yukinarit__pyserde-321,yukinarit/pyserde,2023-03-01 13:20:18,V2-74,SWE-rebench V2,
+zpieslak__mobilus-client-30,zpieslak/mobilus-client,2024-11-17 20:09:57,rebench-dev,SWE-rebench V1,
+zulip__zulip-terminal-967,zulip/zulip-terminal,2021-03-29 07:29:10,rebench-dev,SWE-rebench V1,

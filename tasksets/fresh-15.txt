@@ -1,0 +1,15 @@
+qutip__qutip-2694
+modin-project__modin-7491
+aristanetworks__anta-1176
+python-attrs__attrs-1417
+kozea__weasyprint-2494
+mpmath__mpmath-926
+reagento__dishka-436
+capitalone__datacompy-404
+oemof__tespy-653
+Kinto__kinto-http.py-384
+dask__dask-11723
+juaAI__stationbench-41
+pdm-project__pdm-3420
+wireservice__csvkit-1281
+cneud__alto-tools-29

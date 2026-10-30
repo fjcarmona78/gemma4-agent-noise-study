@@ -1,0 +1,5 @@
+# swegemma 0.2.10's CLI registry only knows a fixed list of names (gemma-4-e4b-it, not the competition's
+# gemma-4-e4b-it-qat-w4a16-ct; 0.2.11 registers declared models itself). Passed via --models-yaml.
+models:
+  gemma-4-e4b-it-qat-w4a16-ct:
+    path: openai/gemma-4-e4b-it-qat-w4a16-ct

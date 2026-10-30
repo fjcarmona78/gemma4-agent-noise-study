@@ -1,0 +1,5 @@
+# Local-only teacher model for distillation runs (job 79+): Qwen3.6-27B (Apache-2.0, 4-bit AWQ from
+# cyankiwi/Qwen3.6-27B-AWQ-INT4) served by vLLM as qwen3.6-27b-teacher. Passed via --models-yaml.
+models:
+  qwen3.6-27b-teacher:
+    path: openai/qwen3.6-27b-teacher

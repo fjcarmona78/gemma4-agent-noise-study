@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# raw runs, task data, models and adapters are not part of the release
+raw_results/
+data/
+models/
+*.safetensors

@@ -1,0 +1,16 @@
+ref,submitted_utc,archive,design,sha256_prefix,public_score,note
+57039009,2026-10-10,v3,early,05302483,0.12,"first real prompt, 5 min / 50 calls"
+57103830,2026-10-12,v3 + LoRA adapter v1,early,04b344dd,0.12,self-distilled adapter; adapters are served
+57150376,2026-10-13,v4b,early,522378d3,0.13,"single agent, contract-first prompt"
+57194829,2026-10-14,v4c_pinned,early,858b6d60,0.13,problem statement pinned in the system prompt
+57245072,2026-10-15,v4c_pinned_think2048,early,,0.12,"thinking budget 2,048"
+57272241,2026-10-16,public_bav2,bundle,6ff73d10,0.18,"the public Budget-Aware v2 bundle, unchanged"
+57310976,2026-10-17,v4c_pinned_cap28,safe,1f0fbddd,,no score: exceeded the 12-hour runtime
+57356408,2026-10-18,public_bav2_noedit_t7,bundle,ddb98f1b,0.17,"bundle without edit_file, 7-minute cap"
+57391476,2026-10-19,v4c_pinned_cap28_noedit_safe,safe,66d2a865,0.18,the safe prompt
+57431779,2026-10-20,public_bav2_noedit_t7_mintools,bundle,,0.10,graph tools and read_file removed
+57481110,2026-10-21,v4c_pinned_cap28_noedit_safe,safe,66d2a865,0.13,byte-identical replicate of 57391476
+57517743,2026-10-22,public_bav2_noedit_t7,bundle,ddb98f1b,,no score: Kaggle-side error on rerun
+57557415,2026-10-23,public_bav2_noedit_t7,bundle,ddb98f1b,0.13,byte-identical replicate of 57356408
+57594720,2026-10-24,v4c_pinned_cap28_noedit_safe,safe,66d2a865,0.13,byte-identical replicate #2 of 57391476
+57626303,2026-10-25,public_bav2_noedit_t7_e4b_zero_lora,E4B,,0.03,Gemma 4 E4B with an all-zero rank-16 adapter

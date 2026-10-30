@@ -1,0 +1,11 @@
+# Per-task budgets read by the Kaggle scorer (only these four keys are read; default is no limit).
+# The scorer runs ~120 hidden tasks sequentially and must finish all of them within 12 hours,
+# sandbox setup included; exceeding 12 hours errors the entire submission.
+# v4b = v4's single agent and prompt rules on v3's budget, which already finished inside 12 h on
+# Kaggle (57039009): 120 tasks x (5 min agent + ~0.5 min setup) ~= 11 h. v4's 28-call cap ran out
+# after ~3 minutes (Gemma makes a call every ~6-7 s) and left 5 of its first 14 tasks with no edit.
+evaluation:
+  max_time_minutes: 5
+  timeout_seconds: 120
+  max_tool_calls: 50
+  max_turns: 500
