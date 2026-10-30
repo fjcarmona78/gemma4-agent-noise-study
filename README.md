@@ -31,8 +31,7 @@ Standard library only. The same code runs in the companion Kaggle notebook
 | `results/interventions.csv` | The paper's intervention table with the run names behind each row |
 | `analysis/` | `export_results.py` (builds the CSVs from raw runs), `reproduce_tables.py`, the notebook |
 | `agents/safe_prompt/` | Our agent: `agent.yaml`, system prompt, sampling and evaluation config |
-| `agents/bundle_noedit/` | The public Budget-Aware v2 bundle with `edit_file` removed and a 7-minute cap (see its `ATTRIBUTION.md`) |
-| `agents/variants/` | Every intervention variant that ran locally (prompt and config files only; adapters not included) |
+| `agents/variants/` | The intervention variants of our own design that ran locally (prompt and config files only; adapters not included) |
 | `harness/` | Local evaluation harness: `run_eval.py` (competition harness driver), `run_rebench.py` and `run_ood45.py` (per-task Docker images for SWE-rebench and OOD-45), `serve_vllm.sh`, the queue runner |
 | `tasksets/` | Task id lists of the five local sets and the held-back final-25, the repository exclusion lists, and the task-set builder scripts |
 | `tools/` | Analysis tools: paired sign tests, failure anatomy, per-task tracker, trace digests, recall probe, routing check, patch chooser, repair cards, and more |
@@ -41,6 +40,18 @@ Standard library only. The same code runs in the companion Kaggle notebook
 Not included: the competition's own data (rule 2.4b forbids redistribution), the SWE-rebench
 and OOD-45 task files and Docker images (public upstream, see below), raw traces, model weights
 and adapters.
+
+## The bundle
+
+The second design of the paper, "the bundle", is the public Kaggle notebook
+[Gemma 4 | Budget - Aware Coding Agent v2](https://www.kaggle.com/code/flexonafft/gemma-4-budget-aware-coding-agent-v2)
+by Kaggle user flexonafft. Its files are not redistributed here. The variant used in the paper
+(`public_bav2_noedit_t7` in `results/runs.csv`) differs from that notebook in three ways: `edit_file`
+is removed from the tool list so that edits go through `run_command` heredocs, `max_time_minutes`
+is 7 instead of 8, and the prompt's budget line says so. The unmodified bundle is Kaggle
+submission 57272241 in `results/kaggle_submissions.csv`; the other `public_*` run names in
+`runs.csv` are bundle variants (call caps, temperature, thinking budget, edit deadline, tool removal,
+E4B), each a one-line change from the notebook's configuration as named.
 
 ## Task sets
 
@@ -80,8 +91,7 @@ driver so that each task runs in its own upstream Docker image. `harness/runner/
 
 ## License
 
-Apache License 2.0 (see `LICENSE`). `agents/bundle_noedit/` derives from a public Kaggle
-notebook by another author; see its `ATTRIBUTION.md`.
+Apache License 2.0 (see `LICENSE`).
 
 ## Disclosure
 
