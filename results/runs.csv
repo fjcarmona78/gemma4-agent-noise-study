@@ -8,6 +8,8 @@ v2t74_public_bav2_noedit_t7_rep2,V2-74,bundle,,3,74,26,1,28,5.6000000000000005,3
 v2t74_public_bav2_noedit_t7_rep3,V2-74,bundle,,4,74,25,1,28,5.6000000000000005,3.5,23.6,15,10
 v2t74_public_bav2_noedit_t7_rep5,V2-74,bundle,,6,74,26,1,28,5.6000000000000005,3.28,23.6,11,5
 v2t74_public_bav2_noedit_t7_rep6,V2-74,bundle,,7,74,27,1,28,5.6000000000000005,3.73,24.6,12,15
+v2t74_safe_mistral_sft1,V2-74,variant,safe_mistral_sft1,1,74,23,1,28,5.6,3.48,24.1,14,5
+v2t74_safe_mistral_sft1_rep,V2-74,variant,safe_mistral_sft1,2,74,25,1,28,5.6,3.44,23.9,15,7
 v2t74_v4c_pinned_cap28_noedit_safe,V2-74,safe,,1,74,22,1,28,5.6000000000000005,3.52,24.0,17,10
 v2t74_v4c_pinned_cap28_noedit_safe_rep,V2-74,safe,,2,74,26,1,28,5.6000000000000005,3.57,24.1,17,7
 v2t74_v4c_pinned_cap28_noedit_safe_rep2,V2-74,safe,,3,74,31,1,28,5.6000000000000005,3.51,24.0,15,9

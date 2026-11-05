@@ -137,7 +137,57 @@ def main():
     table(['What went wrong', 'Attempts', 'Share'], [(label.get(k, k), v, f'{v / len(failed):.0%}') for k, v in sorted(cnt.items(), key=lambda kv: -kv[1])])
     nop = [x for x in failed if x['failure_class'] == 'no_patch']
     at_cap = sum(x['ended_by'] in ('tool_cap', 'time_cap') for x in nop)
-    print(f'No-patch attempts that ended at the tool-call or time cap: {at_cap} of {len(nop)}')
+    print(f'No-patch attempts that ended at the tool-call or time cap: {at_cap} of {len(nop)}\n')
+
+    # ---- 7. other models through the same harness on the never-solved and coin-flip tasks (section 6) ----------
+    tf = R / 'teacher_attempts.csv'
+    if tf.exists():
+        teach = load(tf)
+        print('## Other models through the same harness, never-solved and coin-flip tasks of the five sets\n')
+        pan = [x for x in teach if x['purpose'] == 'panel']
+        excl = sorted({x['instance_id'] for x in pan if x['excluded'] == '1'})
+        pan = [x for x in pan if x['instance_id'] not in excl]
+        print(f'Excluded from both models, a harness fault on the Mistral run (empty tool argument from the API proxy): {len(excl)} tasks ({", ".join(excl)})\n')
+        for model in sorted({x['model'] for x in pan}):
+            rows = []
+            for s in SETS + ['All']:
+                line = [s]
+                for cl in ('never', 'coin_flip'):
+                    xs = [x for x in pan if x['model'] == model and x['pooled_class'] == cl and (s == 'All' or x['set'] == s)]
+                    line.append(f"{sum(x['resolved'] == '1' for x in xs)} of {len(xs)}")
+                rows.append(line)
+            print(f'**{model}**\n')
+            table(['Set', 'Never-solved', 'Coin-flip'], rows)
+            fails = [x for x in pan if x['model'] == model and x['resolved'] == '0']
+            print(f'Failures: {len(fails)}; at the 28-call cap: {sum(int(x["tool_calls"]) >= 28 for x in fails)}; at the 60-minute clock: {sum(float(x["minutes"]) >= 60 for x in fails)}\n')
+
+    # ---- 8. the Mistral-teacher adapter on V2-74 against the safe-prompt baselines (section 6) --------------------
+    ad = [x for x in att if x['variant'] == 'safe_mistral_sft1' and x['set'] == 'V2-74']
+    base = [x for x in design_att if x['set'] == 'V2-74' and x['design'] == 'safe']
+    if ad and base:
+        print('## The Mistral-teacher adapter on V2-74 against the six safe-prompt baselines\n')
+        ar = defaultdict(list); br = defaultdict(list)
+        for x in ad: ar[x['run_name']].append(x)
+        for x in base: br[x['run_name']].append(x)
+        a_s = [sum(x['resolved'] == '1' for x in v) for k, v in sorted(ar.items())]
+        b_s = [sum(x['resolved'] == '1' for x in v) for k, v in sorted(br.items(), key=lambda kv: int(kv[1][0]['run_index']))]
+        print(f'Adapter runs: {", ".join(map(str, a_s))} of 74. Safe-prompt baselines: {", ".join(map(str, b_s))} (mean {statistics.mean(b_s):.1f}).')
+        at_ = defaultdict(list); bt = defaultdict(list)
+        for x in ad: at_[x['instance_id']].append(int(x['resolved']))
+        for x in base: bt[x['instance_id']].append(int(x['resolved']))
+        never = [tid for tid in bt if sum(bt[tid]) == 0]
+        print(f'Tasks no baseline solved: {len(never)}; the adapter solved {sum(max(at_[t]) for t in never if t in at_)} of them.')
+        up = sum(statistics.mean(at_[t]) > statistics.mean(bt[t]) for t in at_); dn = sum(statistics.mean(at_[t]) < statistics.mean(bt[t]) for t in at_)
+        print(f'Per-task solve rate higher under the adapter on {up} tasks, lower on {dn}; sign test p = {sign_test(up, dn):.2f}')
+        print(f'Mean calls: adapter {statistics.mean(int(x["tool_calls"]) for x in ad):.1f}, baselines {statistics.mean(int(x["tool_calls"]) for x in base):.1f}; '
+              f'mean minutes: {statistics.mean(float(x["minutes"]) for x in ad):.2f} vs {statistics.mean(float(x["minutes"]) for x in base):.2f}\n')
+
+    # ---- 9. the adapters and their data ----------------------------------------------------------------------
+    af = R / 'adapters.csv'
+    if af.exists():
+        print('## Adapters: data sources and where each was evaluated\n')
+        table(['Adapter', 'Method', 'Base', 'Trained on (sets)', 'Examples', 'Tasks', 'Evaluated on'],
+              [(a['adapter'], a['method'], a['base_model'], a['source_sets'], a['examples'], a['tasks'], a['evaluated_on']) for a in load(af)])
     bundle_nop = {x['instance_id'] for x in nop if x['design'] == 'bundle'}
     print(f'Tasks where the bundle ever ended with no patch: {len(bundle_nop)} of {len(rates)}')
     # test reading within tasks that were both solved and failed (patch-producing attempts only)

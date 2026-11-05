@@ -24,11 +24,13 @@ Standard library only. The same code runs in the companion Kaggle notebook
 | Path | Contents |
 |---|---|
 | `results/tasks.csv` | The 216 distinct tasks: id, repository, creation date, which local set(s), source dataset |
-| `results/runs.csv` | One row per local run (108): set, design or variant, repeat index, solves, caps, mean minutes and calls |
-| `results/task_attempts.csv` | One row per (run, task) attempt (4,214): outcome, calls, minutes, how it ended, failure anatomy, file stage, first edit call, test-reading flags |
+| `results/runs.csv` | One row per local run (110): set, design or variant, repeat index, solves, caps, mean minutes and calls |
+| `results/task_attempts.csv` | One row per (run, task) attempt (4,362): outcome, calls, minutes, how it ended, failure anatomy, file stage, first edit call, test-reading flags |
 | `results/task_solve_rates.csv` | Per task: solve rate under each design over its complete runs, pooled rate and the always / coin-flip / never class |
 | `results/kaggle_submissions.csv` | Our Kaggle submissions with public scores, including the byte-identical replicates |
 | `results/interventions.csv` | The paper's intervention table with the run names behind each row |
+| `results/teacher_attempts.csv` | One row per (model, task) for the other models run through the same harness (489): Mistral Large 4 and Devstral Small 2 on the 132 never-solved and coin-flip tasks, the Mistral training batches, and the Qwen3.6-27B teacher runs |
+| `results/adapters.csv` | The seven adapters we trained: method, data sources (runs and sets), size, and the runs that evaluated each |
 | `analysis/` | `export_results.py` (builds the CSVs from raw runs), `reproduce_tables.py`, the notebook |
 | `agents/safe_prompt/` | Our agent: `agent.yaml`, system prompt, sampling and evaluation config |
 | `agents/variants/` | The intervention variants of our own design that ran locally (prompt and config files only; adapters not included) |
@@ -65,8 +67,10 @@ All 216 tasks come from public sources outside the competition data.
 | fresh-15 | 15 | SWE-rebench V2, imported late as an untouched check (shares 4 tasks with V2-74, counted once) |
 | rebench-dev | 53 | [SWE-rebench V1](https://huggingface.co/datasets/nebius/SWE-rebench) development split |
 
-`tasksets/bench_repos.json` and the other exclusion lists kept every evaluation repository out
-of all training data; `tasksets/builder/` holds the scripts that selected and validated the sets.
+`tasksets/bench_repos.json` and the other exclusion lists kept the repositories of the SWE-rebench test
+and development splits and of the competition's public data out of all training data. No adapter was
+trained on runs over a set it was evaluated on; `results/adapters.csv` lists each adapter's data sources
+and evaluation runs. `tasksets/builder/` holds the scripts that selected and validated the sets.
 
 ## Column notes for `task_attempts.csv`
 

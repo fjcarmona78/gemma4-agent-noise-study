@@ -15,6 +15,9 @@ What goes out (external tasks only: SWE-rebench V1/V2 and OOD-45; nothing from t
   task_solve_rates.csv   per task x design solve rates over the complete runs of the two designs, pooled class
   kaggle_submissions.csv the public leaderboard scores of our submissions (static table)
   interventions.csv      the paper's intervention table with the run names behind each row (static table)
+  teacher_attempts.csv   one row per (model, task) for the other models run through the same harness: Mistral Large 4 and
+                         Devstral Small 2 on the never-solved / coin-flip panel, Mistral training batches, Qwen3.6-27B teacher runs
+  adapters.csv           every adapter we trained: data sources (runs, sets), size, where it was evaluated (static table)
 """
 import argparse, csv, glob, json, re, statistics
 from collections import defaultdict
@@ -30,7 +33,7 @@ SETS = {
 }
 # ---- the two designs of the paper (results stem after the set prefix; `_rep`, `_rep2`, ... are repeats) --------
 DESIGNS = {'public_bav2_noedit_t7': 'bundle', 'v4c_pinned_cap28_noedit_safe': 'safe'}
-SKIP = re.compile(r'(_gold|_empty|_probe$|_at28$|_pythonpath_bug$|_part\d$|_http400$)')
+SKIP = re.compile(r'(_gold|_empty|_probe$|_at28$|_pythonpath_bug$|_part\d$|_http400$|_teacher_|\.9n3fail$)')
 TESTFILE = re.compile(r'(^|/)(tests?/|test_[^/]*\.py$|[^/]*_test\.py$|conftest\.py)')
 SRC = re.compile(r'^\+\+\+ b/(\S+)', re.M)
 EDIT_CMD = re.compile(r"write_text\(|\bsed -i\b|\bcat\s*>|\btee\b|open\([^)]*['\"]w['\"]")
@@ -51,6 +54,39 @@ KAGGLE = [  # ref, submitted (UTC), archive, design, sha256 prefix, public score
     ('57557415', '2026-10-23', 'public_bav2_noedit_t7', 'bundle', 'ddb98f1b', '0.13', 'byte-identical replicate of 57356408'),
     ('57594720', '2026-10-24', 'v4c_pinned_cap28_noedit_safe', 'safe', '66d2a865', '0.13', 'byte-identical replicate #2 of 57391476'),
     ('57626303', '2026-10-25', 'public_bav2_noedit_t7_e4b_zero_lora', 'E4B', '', '0.03', 'Gemma 4 E4B with an all-zero rank-16 adapter'),
+]
+
+# ---- other models run through the same harness (Section 6) ---------------------------------------------------
+# model, purpose, run names. 'panel' = the never-solved / coin-flip tasks of the five sets (data/teacher_mistral/panel.csv);
+# 'training batch' = SWE-rebench tasks outside every set, run only to collect trajectories; 'teacher' = runs recorded for an adapter.
+TEACHERS = [
+    ('Mistral Large 4', 'panel', ['v2t74_teacher_mistral_large4', 'v2t74_teacher_mistral_large4_part2', 'v2t74_teacher_mistral_large4_part3',
+                                  'recent_teacher_mistral_large4_part2', 'ood45_teacher_mistral_large4_part2',
+                                  'fresh15_teacher_mistral_large4_part2', 'rebench_dev_teacher_mistral_large4_part2']),
+    ('Mistral Large 4', 'training batch', ['rebench_v1b1_teacher_mistral_large4', 'rebench_v2b3_teacher_mistral_large4']),
+    ('Devstral Small 2 24B', 'panel', ['v2t74_teacher_devstral', 'recent_teacher_devstral', 'ood45_teacher_devstral',
+                                       'fresh15_teacher_devstral', 'rebench_dev_teacher_devstral']),
+    ('Qwen3.6-27B', 'teacher', ['dev91_teacher_qwen36', 'v2_teacher_qwen36']),
+]
+TEACHER_SETS = {'rebench_v1b1_': 'training batch (SWE-rebench V1)', 'rebench_v2b3_': 'training batch (SWE-rebench V2)',
+                'dev91_': 'dev91', 'v2_': 'V2-74'}
+# A harness fault, not an agent failure: the API proxy handed the harness an empty tool argument (identical signature in all
+# three cases, Mistral Large 4 on V2-74). Malformed tool calls produced by a model itself count as failures.
+EXCLUDE_ERR = 'Sandbox execution error: Unterminated string starting at: line 1 column 2 (char 1)'
+
+# ---- every adapter we trained: method, data sources, size, evaluation (counts from finetune/data/<name>.report.json) ------
+ADAPTERS = [  # name, method, base model, source sets, evaluated on (runs or Kaggle ref), paper row
+    ('v1', 'LoRA SFT on own successes', 'Gemma 4 31B', 'dev91, dev45 (development sets outside the five)',
+     'eval30_lora_v1;eval30_lora_v1_rep; Kaggle 57103830', 'LoRA SFT on own successes, three adapters'),
+    ('v2', 'LoRA SFT on own successes', 'Gemma 4 31B', 'dev91, dev45', 'eval30_lora_v2;eval30_lora_v2_rep', 'LoRA SFT on own successes, three adapters'),
+    ('v3', "LoRA SFT on a 27B teacher's successes (Qwen3.6-27B)", 'Gemma 4 31B', 'dev91, V2-74',
+     'recent_lora_v3;rebench_dev_lora_v3', "LoRA SFT on a 27B teacher's successes"),
+    ('kto_v1', 'KTO on own successes and failures', 'Gemma 4 31B', 'dev91', 'recent_kto_v1;rebench_dev_kto_v1', 'KTO on own successes and failures'),
+    ('kto_v2', 'KTO on own successes and failures', 'Gemma 4 31B', 'V2-74', 'recent_kto_v2', 'KTO on own successes and failures'),
+    ('e4b_distill_v1', 'LoRA SFT on 31B trajectories (both designs)', 'Gemma 4 E4B', 'V2-74, fresh-15',
+     'recent_e4b_distill_v1;recent_e4b_distill_v1_rep', 'E4B distilled from 31B trajectories'),
+    ('mistral_sft1', "LoRA SFT on Mistral Large 4's successes", 'Gemma 4 31B', 'recent-33, OOD-45, fresh-15 panel tasks and a SWE-rebench V2 training batch; no V2-74 task',
+     'v2t74_safe_mistral_sft1;v2t74_safe_mistral_sft1_rep', 'Section 6, training on its trajectories'),
 ]
 
 INTERVENTIONS = [  # intervention, measured on, result, verdict, run names (local), baseline run names
@@ -238,6 +274,35 @@ def main():
                              mean_minutes=round(statistics.mean(mins), 2), mean_calls=round(statistics.mean(calls), 1),
                              empty_patches=empty, time_caps=time_caps))
 
+    # other models through the same harness
+    panel = {}
+    pf = P / 'data' / 'teacher_mistral' / 'panel.csv'
+    if pf.exists():
+        panel = {r['instance_id']: r for r in csv.DictReader(open(pf))}
+    teacher = []
+    for model, purpose, names in TEACHERS:
+        for run_name in names:
+            f = P / 'results' / run_name / 'task_results.jsonl'
+            if not f.exists():
+                continue
+            sname = next((v[0] for k, v in SETS.items() if run_name.startswith(k)), '') or \
+                    next((v for k, v in TEACHER_SETS.items() if run_name.startswith(k)), '')
+            for l in open(f):
+                r = json.loads(l); tid = r['instance_id']; err = str(r.get('error') or '')
+                teacher.append(dict(model=model, purpose=purpose, run_name=run_name, set=sname, instance_id=tid,
+                                    repo=tasks.get(tid, {}).get('repo') or r.get('repo', ''),
+                                    pooled_class=panel.get(tid, {}).get('pooled_class', '') if purpose == 'panel' else '',
+                                    resolved=int(bool(r['resolved'])), tool_calls=int(r.get('tool_calls') or 0),
+                                    minutes=round(float(r.get('duration_seconds') or 0) / 60, 2),
+                                    error=err[:120].replace('\n', ' '), excluded=int(EXCLUDE_ERR in err)))
+    adapters = []
+    for name, method, base, sets_, evald, row in ADAPTERS:
+        rep = P / 'finetune' / 'data' / f'{name}.report.json'
+        j = json.loads(rep.read_text()) if rep.exists() else {}
+        adapters.append(dict(adapter=name, method=method, base_model=base, source_sets=sets_,
+                             source_runs=';'.join(j.get('per_run', {}).keys()) if isinstance(j.get('per_run'), dict) else '',
+                             examples=j.get('examples', ''), tasks=j.get('tasks', ''), evaluated_on=evald, paper_row=row))
+
     def write(name, rows, fields):
         with open(O / name, 'w', newline='') as f:
             w = csv.DictWriter(f, fieldnames=fields); w.writeheader(); w.writerows(rows)
@@ -259,6 +324,9 @@ def main():
     write('task_solve_rates.csv', rate_rows, list(rate_rows[0].keys()))
     write('kaggle_submissions.csv', [dict(zip(['ref', 'submitted_utc', 'archive', 'design', 'sha256_prefix', 'public_score', 'note'], k)) for k in KAGGLE],
           ['ref', 'submitted_utc', 'archive', 'design', 'sha256_prefix', 'public_score', 'note'])
+    write('teacher_attempts.csv', teacher, ['model', 'purpose', 'run_name', 'set', 'instance_id', 'repo', 'pooled_class', 'resolved',
+                                            'tool_calls', 'minutes', 'error', 'excluded'])
+    write('adapters.csv', adapters, ['adapter', 'method', 'base_model', 'source_sets', 'source_runs', 'examples', 'tasks', 'evaluated_on', 'paper_row'])
     write('interventions.csv', [dict(zip(['intervention', 'measured_on', 'result', 'verdict', 'runs', 'baseline_runs'], k)) for k in INTERVENTIONS],
           ['intervention', 'measured_on', 'result', 'verdict', 'runs', 'baseline_runs'])
 
