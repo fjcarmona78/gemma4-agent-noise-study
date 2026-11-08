@@ -1,6 +1,6 @@
 adapter,method,base_model,source_sets,source_runs,examples,tasks,evaluated_on,paper_row
-v1,LoRA SFT on own successes,Gemma 4 31B,"dev91, dev45 (development sets outside the five)",dev91_v3_t4_rec;step1C_v3_dev91_t4;dev91_v3_t5;dev91_v3_t5_rep;zero_lora_smoke;dev45_v3_rerun;format_probe,172,40,eval30_lora_v1;eval30_lora_v1_rep; Kaggle 57103830,"LoRA SFT on own successes, three adapters"
-v2,LoRA SFT on own successes,Gemma 4 31B,"dev91, dev45",step1C_v3_dev91_t4;dev91_v3_t4_rec;dev45_v3_rerun;dev91_v3_t5_rep;dev91_v3_t5;dev91_v3_rec2;dev91_hinted1,63,44,eval30_lora_v2;eval30_lora_v2_rep,"LoRA SFT on own successes, three adapters"
+v1,LoRA SFT on own successes,Gemma 4 31B,"dev91, dev45 (development sets outside the five)",dev91_v3_t4_rec;step1C_v3_dev91_t4;dev91_v3_t5;dev91_v3_t5_rep;zero_lora_smoke;dev45_v3_rerun;format_probe,172,40,eval30_lora_v1;eval30_lora_v1_rep; Kaggle 57103830,"LoRA SFT on own successes, two adapters"
+v2,LoRA SFT on own successes,Gemma 4 31B,"dev91, dev45",step1C_v3_dev91_t4;dev91_v3_t4_rec;dev45_v3_rerun;dev91_v3_t5_rep;dev91_v3_t5;dev91_v3_rec2;dev91_hinted1,63,44,eval30_lora_v2;eval30_lora_v2_rep,"LoRA SFT on own successes, two adapters"
 v3,LoRA SFT on a 27B teacher's successes (Qwen3.6-27B),Gemma 4 31B,"dev91, V2-74",dev91_teacher_qwen36;dev91_v4b;v2_teacher_qwen36,107,73,recent_lora_v3;rebench_dev_lora_v3,LoRA SFT on a 27B teacher's successes
 kto_v1,KTO on own successes and failures,Gemma 4 31B,dev91,dev91_v4b;dev91_v4c,405,91,recent_kto_v1;rebench_dev_kto_v1,KTO on own successes and failures
 kto_v2,KTO on own successes and failures,Gemma 4 31B,V2-74,v2_gemma_t2048_r1;v2_gemma_t2048_r2,381,74,recent_kto_v2,KTO on own successes and failures

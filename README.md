@@ -6,7 +6,7 @@ for the Google Gemma 4 Developer Agent competition (Kaggle, 2026).
 
 The paper measures how much of a reported agent gain can be trusted: byte-identical Kaggle
 submissions scored 0.18 then 0.13; 38 complete local runs of two different agent designs on
-216 SWE-rebench tasks are statistically identical; twenty interventions moved nothing beyond
+216 public tasks are statistically identical; twenty interventions moved nothing beyond
 noise; and the anatomy of 995 failed attempts says why. Every number in the paper can be
 rebuilt from the CSV files in `results/` with one script and no GPU.
 
