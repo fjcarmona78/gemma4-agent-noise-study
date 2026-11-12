@@ -1,7 +1,7 @@
 # Most Agent Improvements Are Noise
 
 Code, per-task results and analysis behind the paper-track entry
-*Most Agent Improvements Are Noise: A Calibrated Study of a Gemma 4 31B Coding Agent*
+*Most Agent Improvements Are Noise: A Calibrated Study of a Gemma 4 Coding Agent*
 for the Google Gemma 4 Developer Agent competition (Kaggle, 2026).
 
 The paper measures how much of a reported agent gain can be trusted: byte-identical Kaggle
